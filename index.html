@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Круговая диаграмма</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div style="display: flex; justify-content: center;">
+    <div class="siteDiv">
+
+        <div style=" width: 100px; height: 100px; position: absolute; right: 350px ">
+            Important text about important data
+        </div>
+
+        <!--Вынести в отдельный класс-->
+        <p style="color: aliceblue; font-family: 'Roboto Black'; margin-left: 10px">Name</p>
+        <p style="color: aliceblue; font-family: 'Roboto Black'; margin-right: 10px">100%</p>
+        <canvas id="myChart" width="300px" height="300px" style="width: 25px; height: 25px; margin-right: 10px"></canvas>
+
+    </div>
+</div>
+
+
+<script>
+    // todo - перенести в script.js и чтобы работало по классу а не ID
+    // Рисует диаграму
+
+    // Получаем элемент canvas и его контекст
+    var canvas = document.getElementById('myChart');
+    //var canvas = document.getElementsByClassName('truthChart')
+    var ctx = canvas.getContext('2d');
+
+    // Радиус диаграммы
+    var radius = canvas.height / 2;
+
+    // Радиус внутреннего круга (чтобы создать кольцо)
+    var innerRadius = radius * 0.4; // Можно настроить под свои нужды
+
+    // Определение центра диаграммы
+    var centerX = canvas.width / 2;
+    var centerY = canvas.height / 2;
+
+    // Создание функции для рисования сектора
+    function drawSegment(startAngle, endAngle, color) {
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // Создание функции для рисования внутреннего круга
+    function drawInnerCircle() {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, innerRadius, 0, 2 * Math.PI);
+        ctx.fillStyle = '#030303'; // Тёмный цвет круга
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // Данные для диаграммы (проценты)
+   /* var data = [30, 20, 25, 15, 10];
+    var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff'];*/
+
+    var data = [70, 30];
+    var colors = ['#00DE09', '#DE1B00'];
+
+    // Рисуем каждый сектор
+    var totalPercentage = 0;
+    for (var i = 0; i < data.length; i++) {
+        var startAngle = (totalPercentage / 100) * Math.PI * 2;
+        var endAngle = ((totalPercentage + data[i]) / 100) * Math.PI * 2;
+        drawSegment(startAngle, endAngle, colors[i]);
+        totalPercentage += data[i];
+    }
+
+    // Рисуем внутренний круг
+    drawInnerCircle();
+
+</script>
+</body>
+</html>

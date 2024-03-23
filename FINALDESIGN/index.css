@@ -1,0 +1,150 @@
+body{
+    background-color: rgb(245,218,255,40%);
+}
+
+.themeDiv
+{
+    border-radius: 15px;
+    border: 1px;
+    box-shadow: 0px 5px 5px 0px grey;
+
+    width: 200px;
+    height: 100px;
+
+    margin: 15px;
+
+    background-color: white;
+}
+
+.themeButton
+{
+    border-radius: 15px;
+    border: 1px;
+    box-shadow: 0px 5px 5px 0px grey;
+
+    width: 200px;
+    height: 100px;
+
+    margin: 15px;
+
+    background-color: white;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+main
+{
+    /*display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+main > div
+{
+    margin: 10px;
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    flex-wrap: wrap; /* Разрешаем перенос элементов на следующую строку */
+}
+
+main > div > canvas
+{
+    margin: 10px;
+
+    border-radius: 25px;
+    box-shadow: 0px 5px 5px 0px grey;
+    background-color: white;
+}
+
+nav
+{
+    background-image: linear-gradient(to right, #F5DAFF , #E5E5E5);
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    /*background-image: linear-gradient(to bottom left, rgb(148,187,233,40%) ,rgb(238,174,202,40%)) ;*/
+    background: linear-gradient(to bottom left, rgba(148,187,233,40%), rgba(238,174,202,40%)  );
+    padding: 20px;
+   /* border-bottom-left-radius: 15px;*/
+
+    border-radius: 15px;
+    left: 0px;
+
+    border-top-left-radius: 0px;
+
+
+    /*rgb(148,187,233,40%);
+    rgb(238,174,202,40%);*/
+}
+
+/* Sidebar links */
+.sidebar button
+{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    border-radius: 25px;
+
+}
+
+.sidebar a
+{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+
+}
+
+.sidebar a > div
+{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar a > div > div
+{
+    font-family: Roboto;
+    margin-left: 10px;
+}
+
+
+
+/* Active/current link */
+.sidebar button.active {
+ /*   background-color: #04AA6D;*/
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar button:hover:not(.active) {
+   /* background-color: #555;*/
+    color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
