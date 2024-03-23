@@ -113,7 +113,7 @@ nav
     color: black;
     padding: 16px;
     text-decoration: none;
-
+    opacity: 100%;
 }
 
 .sidebar a > div
@@ -122,12 +122,16 @@ nav
     align-items: center;
 }
 
+.sidebar a:hover
+{
+    opacity: 30%;
+}
+
 .sidebar a > div > div
 {
     font-family: Roboto;
     margin-left: 10px;
 }
-
 
 
 /* Active/current link */

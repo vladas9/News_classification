@@ -1,22 +1,25 @@
-var elements = document.querySelectorAll(".themeDiv");
-elements.forEach(function(element) {
-    element.style.backgroundColor = "#FF0000";
-});
+DrawGistograph();
 
-function ShowGraph() {
-    var elements = document.querySelectorAll(".themeDiv");
-    elements.forEach(function(element) {
-        element.style.backgroundColor = "#FFFFFF";
-    });
-    console.log("asbhjgeuaegbugebuaw");
+
+function extract_json()
+{
+
+
+        const fs = require('fs');
+        const filePath = 'data.json';
+
+        const data = fs.readFileSync(filePath, 'utf8');
+        const objects = JSON.parse(data);
+        return objects;
+
 }
 
-function DrawGistograph(){
+function DrawGistograph(data = [40, 20, 30, 40, 50, 30, 20, 20]){
     var canvas = document.getElementById('myChart');
     var ctx = canvas.getContext('2d');
 
     // Задаем данные для графика (здесь просто пример)
-    var data = [40, 20, 30, 40, 50, 30, 20, 20];
+   // var data = [40, 20, 30, 40, 50, 30, 20, 20];
 
     // Отрисовываем график
     drawChart(data, ctx, canvas);
