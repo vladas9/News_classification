@@ -6,8 +6,11 @@
 
     <link rel="stylesheet" href="./index.css" />
 
+
 </head>
 <body>
+
+
 
 <nav>
     <div class="sidebar">
@@ -78,27 +81,56 @@
 
 <main style="margin-left: 250px">
 
-    <div style="margin-bottom: 40px; margin-top: 40px">
-        <div>
-            <div class="d1">
-                <form>
-                    <input type="text" placeholder="Enter URL please...">
-                    <button type="submit"><img src="Images/search_FILL0_wght400_GRAD0_opsz24.svg"></button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="higherDiv">
-        <canvas id="test" width="800" height="400" ></canvas>
-        <canvas id="lineChart" width="800" height="400" ></canvas>
-    </div>
-    <div id="lowerDiv">
-        <canvas id="barChart" width="800" height="400"></canvas>
-        <canvas id="pieChart" width="800" height="400"></canvas>
-
-    </div>
 </main>
-</body>
 
+<div style=" border-radius: 25px ;max-height: 1800px; max-width: 1000px; min-height: 700px; min-width: 900px; background-color: white" id="output">
+    <label id="#label1"></label>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- https://jquery.com/download/ -->
+<script src="js/moment.min.js"></script>
+<!-- https://momentjs.com/ -->
+<script src="js/utils.js"></script>
+<script src="js/Chart.min.js"></script>
+<!-- http://www.chartjs.org/docs/latest/ -->
+<script src="js/bootstrap.min.js"></script>
+<!-- https://getbootstrap.com/ -->
+<script src="js/tooplate-scripts.js"></script>
+<!--<script>
+    let ctxLine,
+        ctxBar,
+        ctxPie,
+        optionsLine,
+        optionsBar,
+        optionsPie,
+        configLine,
+        configBar,
+        configPie,
+        lineChart;
+    barChart, pieChart;
+    // DOM is ready
+    $(function () {
+        updateChartOptions();
+        drawLineChart(); // Line Chart
+        drawBarChart(); // Bar Chart
+        drawPieChart(); // Pie Chart
+        drawCalendar(); // Calendar
+
+        $(window).resize(function () {
+            updateChartOptions();
+            updateLineChart();
+            updateBarChart();
+            reloadPage();
+        });
+    })
+</script>
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Ваш код для обработки формы здесь
+    });
+</script>-->
+</body>
 </html>

@@ -1,19 +1,6 @@
-body{
-    background-color: rgb(245,218,255,40%);
-}
-
-.themeDiv
+body
 {
-    border-radius: 15px;
-    border: 1px;
-    box-shadow: 0px 5px 5px 0px grey;
-
-    width: 200px;
-    height: 100px;
-
-    margin: 15px;
-
-    background-color: white;
+    background-color: rgb(245,218,255,40%);
 }
 
 .themeButton
@@ -28,6 +15,62 @@ body{
     margin: 15px;
 
     background-color: white;
+}
+
+header {
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center;
+}
+
+.d1 {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.d1 input {
+    width: 600px;
+    height: 42px;
+    padding-left: 10px;
+    border: none;
+    background-color: rgb(245, 218, 255, 0%);
+    border-bottom: 1px solid #0b2e13;
+    outline: none;
+    color: #9e9c9c;
+}
+
+.d1 button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: inline;
+    background-color: rgb(245, 218, 255, 0%);
+    opacity: 80%;
+}
+
+.d1 button:hover {
+   opacity: 30%;
+}
+
+.d1 button:active {
+    opacity: 100%;
+}
+
+.d1 form {
+    display: flex;
+    align-items: center;
+}
+
+.d1 button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
 }
 
 .sidebar {
@@ -46,7 +89,6 @@ body{
     width: 100%;
     margin-bottom: 10px;
 }
-
 
 main
 {
@@ -71,6 +113,8 @@ main > div > canvas
     border-radius: 25px;
     box-shadow: 0px 5px 5px 0px grey;
     background-color: white;
+    max-width: 600px;
+    max-height: 300px;
 }
 
 nav
@@ -133,7 +177,6 @@ nav
     margin-left: 10px;
 }
 
-
 /* Active/current link */
 .sidebar button.active {
  /*   background-color: #04AA6D;*/
@@ -151,4 +194,19 @@ div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
+}
+
+#output {
+    margin: 10px;
+
+    border-radius: 25px;
+    box-shadow: 0px 5px 5px 0px grey;
+    background-color: white;
+    max-width: 600px;
+    max-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

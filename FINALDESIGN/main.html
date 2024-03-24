@@ -5,12 +5,23 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="loading.css" />
 
 </head>
 <body>
-    <header>
-        Header
-    </header>
+
+
+
+        <!--<header>
+            <div>
+                <div class="d1">
+                    <form>
+                        <input type="text" placeholder="Enter URL please...">
+                        <button type="submit"><img src="Images/search_FILL0_wght400_GRAD0_opsz24.svg"></button>
+                    </form>
+                </div>
+            </div>
+        </header>-->
 
     <nav>
         <div class="sidebar">
@@ -79,67 +90,93 @@
         </div>
     </nav>
 
-    <main>
-        <!--<div>
+    <main style="margin-left: 250px">
 
 
-
-           &lt;!&ndash; <div class="rowDiv">
-                <div class="themeDiv clickable" >
-
-                </div>
-                <button onclick="DrawGistograph()" class="themeButton">
-
-                </button>
-                <div class="themeDiv">
-
-                </div>
-                <div class="themeDiv">
-
+        <div style="margin-bottom: 40px; margin-top: 40px">
+            <div>
+                <div class="d1">
+                    <form id="myForm">
+                        <input  id="search" onkeydown="PostURL(event)" type="text" placeholder="Enter URL please...">
+                        <button type="submit"><img src="Images/search_FILL0_wght400_GRAD0_opsz24.svg"></button>
+                    </form>
                 </div>
             </div>
-            <div class="rowDiv">
-                <div class="themeDiv">
-
-                </div>
-                <div class="themeDiv">
-
-                </div>
-                <div class="themeDiv">
-
-                </div>
-            </div>
-            <div class="rowDiv">
-                <div class="themeDiv">
-
-                </div>
-                <div class="themeDiv">
-
-                </div>
-                <div class="themeDiv">
-
-                </div>
-            </div>&ndash;&gt;
-        </div>-->
-
-        <div>
-            <canvas id="myChart" width="600" height="400" ></canvas>
-            <canvas id="вфывфыв" width="400" height="400" ></canvas>
         </div>
-        <div>
-            <canvas id="12i" width="400" height="400"></canvas>
-            <canvas id="вфывфssыв" width="600" height="400"></canvas>
+
+
+
+
+        <div id="higherDiv">
+            <!--<canvas id="test" width="800" height="400" ></canvas>-->
+            <div style=" border-radius: 25px ; min-width: 600px; min-height: 300px  ; background-color: white" id="output" width="800" height="400">
+                <label style="font-family: Roboto; font-size: 15px; margin-left: 15px; margin-right: 15px;" id="#label1"></label>
+                <label style=" font-family: Roboto;font-size: 15px;  margin-left: 15px; margin-right: 15px; margin-top: 10px" id="#label2"></label>
+                <label style=" font-family: Roboto;font-size: 15px;  margin-left: 15px; margin-right: 15px; margin-top: 10px" id="#label3"></label>
+            </div>
+
+            <canvas id="pieChart" width="800" height="400"></canvas>
+        </div>
+        <div id="lowerDiv">
+
+            <canvas id="barChart" width="800" height="400"></canvas>
+            <canvas id="lineChart" width="800" height="400" ></canvas>
+
         </div>
 
 
     </main>
 
 
+        <div class="spin-wrapper">
+            <div class="spinner">
+            </div>
+        </div>
 
-    <footer>
-        footer
-    </footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="js/moment.min.js"></script>
+    <!-- https://momentjs.com/ -->
+    <script src="js/utils.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <!-- http://www.chartjs.org/docs/latest/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script src="js/tooplate-scripts.js"></script>
+    <script>
+        let ctxLine,
+            ctxBar,
+            ctxPie,
+            optionsLine,
+            optionsBar,
+            optionsPie,
+            configLine,
+            configBar,
+            configPie,
+            lineChart;
+        barChart, pieChart;
+        // DOM is ready
+        $(function () {
+            updateChartOptions();
+            drawLineChart(); // Line Chart
+            drawBarChart(); // Bar Chart
+            drawPieChart(); // Pie Chart
+            drawCalendar(); // Calendar
 
-    <script src="ClickScript.js"></script>
+            $(window).resize(function () {
+                updateChartOptions();
+                updateLineChart();
+                updateBarChart();
+                reloadPage();
+            });
+        })
+    </script>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Ваш код для обработки формы здесь
+        });
+    </script>
 </body>
 </html>
